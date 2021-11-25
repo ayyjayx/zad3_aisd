@@ -32,33 +32,16 @@ def factorial(n: int) -> int:
     return n * factorial(n - 1)
 
 
-# def prime(n: int) -> bool:
-#     if n in {0, 1}:
-#         return False
-#     if n == 2:
-#         return True
-#
-#     sqrt = math.sqrt(n)
-#     if n % math.ceil(sqrt) == 0:
-#         return False
-#     # return prime(n, math.ceil(sqrt))
-#     return prime(n - 1)
-
-
 def prime(n: int, div=-1) -> bool:
-    if n <= 1:
+    if n in {0, 1}:
         return False
     if div == 1 or n == 2:
         return True
-
-    sqrt: float = math.sqrt(n)
-
+    sqrt = math.sqrt(n)
     if div == -1:
         return prime(n, math.ceil(sqrt))
-
     if n % div == 0:
         return False
-
     return prime(n, div - 1)
 
 
@@ -74,5 +57,5 @@ def remove_duplicates(txt: str) -> str:
 # print(power(2, 4))
 # print(reverse('asdf'))
 # print(factorial(5))
-print([prime(n) for n in range(15)])
+# print([prime(n) for n in range(20)])
 # print(remove_duplicates('aaassdddaa'))
